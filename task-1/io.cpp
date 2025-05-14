@@ -14,6 +14,7 @@ int read_block(int fd, std::vector<std::uint32_t>* result)
         return -2;
     }
 
+    // Чтение данных напрямую в вектор
     ssize_t bytes_read = read(fd, result->data(), result->size() * sizeof(uint32_t));
     if ( bytes_read == -1 )
     {
